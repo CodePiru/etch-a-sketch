@@ -33,6 +33,15 @@ h1 {
     height: 70%;
     background-color: white;
     flex-shrink: 0;
+    display: grid;
+}
+
+.pixel {
+    border: solid lightgray 1px;
+}
+
+.active {
+    background-color: black;
 }
 
 #buttons {
