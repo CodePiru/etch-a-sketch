@@ -10,6 +10,10 @@ function createGrid (num) {
     }
 }
 
+function normalMode (e) {
+    e.target.classList.add('active');
+}
 
+container.addEventListener('mouseover', normalMode)
 
 createGrid(16);
