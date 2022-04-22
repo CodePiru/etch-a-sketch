@@ -14,11 +14,16 @@ function createGrid (num) {
 }
 
 function paint (e) {
+    if (!e.target.classList.contains('pixel')) return;
     if (activeMode === 'normal') {
         e.target.style.backgroundColor = 'black';
     } else if (activeMode === 'rgb') {
         const randomColor = Math.floor(Math.random() * 360);
         e.target.style.backgroundColor = `hsl(${randomColor}, 100%, 50%)`;
+    } else if (activeMode === 'gradient') {
+        let currentColor = e.target.style.backgroundColor.split(',')[1] || 255;
+        currentColor -= 25.5;
+        e.target.style.backgroundColor = `rgb(${currentColor}, ${currentColor}, ${currentColor})`;
     }
 }
 
@@ -36,7 +41,7 @@ modes.forEach(mode => mode.addEventListener('click', (e) => {
     e.target.classList.add('nav-active');    
     activeMode = e.target.id;
     const pixels = document.querySelectorAll('.pixel');
-    pixels.forEach(pixel => pixel.style.backgroundColor = 'hsl(0, 0%, 100%)')
+    pixels.forEach(pixel => pixel.style.backgroundColor = 'rgb(255, 255, 255)')
 }))
 
 container.addEventListener('mouseover', paint)
