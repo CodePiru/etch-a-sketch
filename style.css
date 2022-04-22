@@ -79,10 +79,6 @@ h1 {
     box-sizing: border-box;
 }
 
-.active {
-    background-color: black;
-}
-
 #buttons {
     height: 10%;
     width: 90%;
