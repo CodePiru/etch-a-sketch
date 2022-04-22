@@ -1,10 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ms+Madi&family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
 
 body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     min-height: 100vh;
     background: black;
+}
+
+ul {
+    display: flex;
+    width: 100vw;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0px 3px 10px rgb(70, 70, 70);
+}
+
+li {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    list-style: none;
+    flex-grow: 1;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+li:hover {
+    color: red;
+    transform: scale(1);
+}
+
+.nav-active {
+    color: red;
+    transform: scale(1);
 }
 
 #board {
